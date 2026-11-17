@@ -186,6 +186,23 @@ li.flash{animation:flash 2.2s ease-out}
 .brands{display:flex;flex-wrap:wrap;gap:6px}
 .frow{flex-direction:column;align-items:stretch;gap:6px}.frow>b{font-size:26px;min-width:0;line-height:1}.brands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.brands .lg{background:#fff;border:1px solid var(--line);border-radius:8px;height:44px;display:flex;align-items:center;justify-content:center;padding:6px 10px}.brands .lg img{max-height:24px;max-width:100%;width:auto;display:block}.brands .lg:only-child{grid-column:1/-1}.brands .lg:only-child img{max-height:30px}
 .fer .fn{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
+.duo{margin:18px 0 6px;background:var(--surface);border:2px solid var(--red);border-radius:16px;display:grid;grid-template-columns:1fr;overflow:hidden}
+.duo .fer,.duo .combos{margin:0;border:0;border-radius:0;background:transparent}
+.duo #combosW:not([hidden]){border-top:2px dashed var(--line)}
+.duo .cn{margin:12px 0 0;font-size:12.5px;color:var(--muted);line-height:1.45}
+.duo #cBody{grid-column:1/-1;border-top:2px dashed var(--line);padding-top:14px}
+@media (min-width:900px){
+  .duo:has(#ferW:not([hidden])):has(#combosW:not([hidden])){grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+  .duo:has(#ferW:not([hidden])) #combosW:not([hidden]){border-top:0;border-left:2px dashed var(--line)}
+  .duo .frows{grid-template-columns:1fr}
+  .duo .frow{flex-direction:row;align-items:center}
+  .duo .frow>b{min-width:64px}
+  .duo .brands{grid-template-columns:repeat(4,minmax(0,1fr));flex:1}
+  .duo #combosW:not([hidden]){display:flex;align-items:center}.duo #combosW .combos{width:100%}
+  .duo .chead{height:100%;align-content:center;grid-template-columns:1fr;row-gap:6px}
+  .duo .cmore{grid-column:1;grid-row:auto;justify-self:start;margin-top:6px}
+  .duo #cBody .cgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 @media (prefers-reduced-motion:reduce){.bub>button,.bub>button .dot{animation:none}}
 .famimg{flex:none;width:44px;height:44px;border-radius:8px;overflow:hidden;background:var(--chip);align-self:flex-start;margin-top:2px}
 @media (max-width:520px){.famhead{flex-wrap:wrap;row-gap:6px}.famhead .famt{flex:1 1 calc(100% - 60px)}.famhead .upto{flex:1 1 100%;text-align:left;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.famhead .upto strong{font-size:32px}.famhead .range{margin:0}}
@@ -257,7 +274,8 @@ html{scroll-behavior:smooth}
   <div class="seg" id="seg" role="radiogroup" aria-label="Sucursal"></div>
   <p id="sucnote" aria-live="polite"></p>
 </section></div>
-<div class="wrap" id="ferW" hidden><section class="fer" id="fer" aria-labelledby="ferT">
+<div class="wrap" id="duoW" hidden><div class="duo">
+<div class="dcol" id="ferW" hidden><section class="fer" id="fer" aria-labelledby="ferT">
   <p class="ct">Hasta el viernes 20 de noviembre</p>
   <h2 id="ferT">¡Una semana más de Buen Fin! <span>Ofertas en ferretería</span></h2>
   <div class="frows">
@@ -267,18 +285,19 @@ html{scroll-behavior:smooth}
   </div>
   <p class="fn">En productos seleccionados de estas marcas. Consulta productos participantes y disponibilidad en tu sucursal. Hasta agotar existencias.</p>
 </section></div>
-<div class="wrap" id="combosW" hidden><section class="combos" id="combos" aria-labelledby="combosT">
+<div class="dcol" id="combosW" hidden><section class="combos" id="combos" aria-labelledby="combosT">
   <button type="button" class="chead" id="cBtn" aria-expanded="false" aria-controls="cBody">
     <span class="ct">Solo hasta hoy, 17 de noviembre</span>
     <span class="chh" id="combosT">Combos del Buen Fin</span>
     <span class="cl">5 paquetes para tu proyecto · ahorra hasta $549.69</span>
     <span class="cmore"><span id="cTxt">Ver los combos</span> <i aria-hidden="true">▾</i></span>
   </button>
-  <div id="cBody" hidden>
+</section></div>
+<div id="cBody" hidden>
   <div class="cgrid"><article class="ccard"><h3>Renueva tu entrada</h3><p class="cp"><span class="lbl">Ahorra</span><b>$302.85</b></p><p class="cinc"><b>Incluye:</b> Puerta tambor de 34", marco, 3 chambranas, tope, 2 bisagras de acero inoxidable, cerradura de manija con llave y guardapolvo.</p><p class="ccode">Código del combo: KIT0000001</p></article><article class="ccard"><h3>Ilumina con colores claros</h3><p class="cp"><span class="lbl">Ahorra</span><b>$194.60</b></p><p class="cinc"><b>Incluye:</b> Cubeta de pintura acrílica en colores claros, cubeta de primer Smart Coat, kit de charola, rodillo y brocha, rejilla escurridor, plástico protector de 15 m y cinta masking.</p><p class="ccode">Código del combo: KIT0000002</p></article><article class="ccard"><h3>Pinta modernidad y calidez</h3><p class="cp"><span class="lbl">Ahorra</span><b>$170.30</b></p><p class="cinc"><b>Incluye:</b> Cubeta de pintura acrílica en tonos café o gris, cubeta de primer Smart Coat, kit de charola, rodillo y brocha, rejilla escurridor, plástico protector de 15 m y cinta masking.</p><p class="ccode">Código del combo: KIT0000003</p></article><article class="ccard"><h3>Elimina goteras</h3><p class="cp"><span class="lbl">Ahorra</span><b>$283.51</b><span class=off>+ regalo</span></p><p class="cinc"><b>Incluye:</b> Cubeta de impermeabilizante Termofiber blanco de 19 L, membrana de refuerzo de 66 m², cepillo de ixtle, brocha de 3", rodillo de felpa de 9" y maneral.</p><p class="cgift"><b>🎁 De regalo:</b> Sellador acrílico Kanuh 3.8 L, con valor de $625</p><p class="ccode">Código del combo: KIT0000004</p></article><article class="ccard"><h3>Restaura tu techo</h3><p class="cp"><span class="lbl">Ahorra</span><b>$549.69</b><span class=off>+ regalo</span></p><p class="cinc"><b>Incluye:</b> 5 paquetes de shingle doble, cubeta de brea fría Johns Manville, rollo de felpa sintética Easy Lay y 1 kg de tachuela para techo.</p><p class="cgift"><b>🎁 De regalo:</b> Paquete de caballete GAF</p><p class="ccode">Código del combo: KIT0000005</p></article></div>
   <p class="cn">Válido del 13 al 17 de noviembre de 2026 o hasta agotar existencias. Disponibilidad y precio varían por sucursal; pregunta en tu tienda por el combo. El material adicional se cobra por separado. Combos no acumulables con otras promociones.</p>
   </div>
-</section></div>
+</div></div>
 <div class="wrap"><section class="nuevos" aria-labelledby="nvT">
   <h2 id="nvT"><span class="nwb">Nuevo</span> Se suman al Buen Mes</h2>
   <div class="nvl">
@@ -390,5 +409,7 @@ document.querySelectorAll('.nvl button').forEach(b=>b.onclick=()=>{if(q.value){q
   if(!el&&store){setStore('');el=document.getElementById(b.dataset.t);} if(!el)return;
   const g=el.closest('li.grp'); if(g){const h=g.querySelector('.ghead'); if(h.getAttribute('aria-expanded')!=='true')h.click();}
   el.scrollIntoView({behavior:'smooth',block:'center'}); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');});
+
+(()=>{const d=$('duoW');if(d)d.hidden=$('ferW').hidden&&$('combosW').hidden;})();
 </script>
 </html>
