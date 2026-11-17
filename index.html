@@ -133,6 +133,25 @@ ul.sub .stamp{font-size:19px}
 .pop::before{content:"";position:absolute;top:-7px;left:22px;width:14px;height:14px;background:#16241D;transform:rotate(45deg)}
 .pop b{color:var(--tag)}
 .pop p{margin:0 0 6px}.pop p:last-child{margin:0;opacity:.85;font-size:13px}
+.combos{margin:18px 0 6px;background:var(--surface);border:2px solid var(--red);border-radius:16px;padding:16px 16px 14px;position:relative}
+.combos .ct{display:inline-block;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--red);color:#fff;border-radius:999px;padding:4px 11px 3px;margin:0 0 6px}
+.combos h2{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.05;margin:0 0 4px;text-transform:uppercase}
+.combos .cl{margin:0 0 12px;color:var(--muted);font-size:15px}
+.cgrid{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:720px){.cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1080px){.cgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ccard{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg);display:flex;flex-direction:column;gap:6px}
+.ccard h3{font-family:var(--display);font-weight:800;font-size:21px;line-height:1.1;margin:0;text-transform:uppercase}
+.cp{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0}
+.cp s{color:var(--muted);font-size:15px}
+.cp b{font-family:var(--display);font-size:30px;font-weight:800;color:var(--red)}
+.cp .off{background:var(--tag);color:var(--tag-ink);font-weight:700;font-size:13px;border-radius:6px;padding:2px 7px}
+.csave{margin:0;font-weight:700;font-size:15px}
+.cinc{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
+.cgift{margin:0;font-size:14px;background:var(--chip);border-radius:8px;padding:6px 9px}
+.cgift b{color:var(--accent)}
+.ccode{margin:auto 0 0;font-size:12px;color:var(--muted)}
+.combos .cn{margin:12px 0 0;font-size:12.5px;color:var(--muted);line-height:1.45}
 @media (prefers-reduced-motion:reduce){.bub>button,.bub>button .dot{animation:none}}
 .famimg{flex:none;width:44px;height:44px;border-radius:8px;overflow:hidden;background:var(--chip);align-self:flex-start;margin-top:2px}
 @media (max-width:520px){.famhead{flex-wrap:wrap;row-gap:6px}.famhead .famt{flex:1 1 calc(100% - 60px)}.famhead .upto{flex:1 1 100%;text-align:left;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.famhead .upto strong{font-size:32px}.famhead .range{margin:0}}
@@ -203,6 +222,13 @@ html{scroll-behavior:smooth}
   <p>Cada sucursal tiene ofertas diferentes. Elige la tuya y te mostramos solo lo que aplica ahí.</p>
   <div class="seg" id="seg" role="radiogroup" aria-label="Sucursal"></div>
   <p id="sucnote" aria-live="polite"></p>
+</section></div>
+<div class="wrap" id="combosW" hidden><section class="combos" id="combos" aria-labelledby="combosT">
+  <p class="ct">Solo hasta hoy, 17 de noviembre</p>
+  <h2 id="combosT">Combos del Buen Fin</h2>
+  <p class="cl">Todo lo que necesitas para tu proyecto, en un solo paquete y con 15 % de descuento.</p>
+  <div class="cgrid"><article class="ccard"><h3>Renueva tu entrada</h3><p class="cp"><s>$2,020.03</s><b>$1,717.18</b><span class="off">−15 %</span></p><p class="csave">Ahorras $303</p><p class="cinc"><b>Incluye:</b> Puerta tambor de 34", marco, 3 chambranas, tope, 2 bisagras de acero inoxidable, cerradura de manija con llave y guardapolvo.</p><p class="ccode">Código del combo: KIT0000001</p></article><article class="ccard"><h3>Ilumina con colores claros</h3><p class="cp"><s>$1,297.35</s><b>$1,102.75</b><span class="off">−15 %</span></p><p class="csave">Ahorras $195</p><p class="cinc"><b>Incluye:</b> Cubeta de pintura acrílica en colores claros, cubeta de primer Smart Coat, kit de charola, rodillo y brocha, rejilla escurridor, plástico protector de 15 m y cinta masking.</p><p class="ccode">Código del combo: KIT0000002</p></article><article class="ccard"><h3>Pinta modernidad y calidez</h3><p class="cp"><s>$1,135.35</s><b>$965.05</b><span class="off">−15 %</span></p><p class="csave">Ahorras $170</p><p class="cinc"><b>Incluye:</b> Cubeta de pintura acrílica en tonos café o gris, cubeta de primer Smart Coat, kit de charola, rodillo y brocha, rejilla escurridor, plástico protector de 15 m y cinta masking.</p><p class="ccode">Código del combo: KIT0000003</p></article><article class="ccard"><h3>Elimina goteras</h3><p class="cp"><s>$1,890.08</s><b>$1,606.57</b><span class="off">−15 %</span></p><p class="csave">Ahorras $284 + regalo</p><p class="cinc"><b>Incluye:</b> Cubeta de impermeabilizante Termofiber blanco de 19 L, membrana de refuerzo de 66 m², cepillo de ixtle, brocha de 3", rodillo de felpa de 9" y maneral.</p><p class="cgift"><b>🎁 De regalo:</b> Sellador acrílico Kanuh 3.8 L, con valor de $625</p><p class="ccode">Código del combo: KIT0000004</p></article><article class="ccard"><h3>Restaura tu techo</h3><p class="cp"><s>$3,409.70</s><b>$2,898.25</b><span class="off">−15 %</span></p><p class="csave">Ahorras $512 + regalo</p><p class="cinc"><b>Incluye:</b> 5 paquetes de shingle doble, cubeta de brea fría Johns Manville, rollo de felpa sintética Easy Lay y 1 kg de tachuela para techo.</p><p class="cgift"><b>🎁 De regalo:</b> Caballete GAF, con valor de $58.51</p><p class="ccode">Código del combo: KIT0000005</p></article></div>
+  <p class="cn">Precios netos por combo completo, válidos del 13 al 17 de noviembre de 2026 o hasta agotar existencias. El material adicional se cobra por separado al precio de lista. Combos no acumulables con otras promociones. El combo Restaura tu techo incluye productos de importación cuyo precio en pesos depende del tipo de cambio del día. Confirma disponibilidad en tu sucursal.</p>
 </section></div>
 <nav class="fams" aria-label="Familias"><div class="wrap" id="chips"></div></nav>
 <div class="wrap search">
@@ -289,7 +315,7 @@ list.addEventListener('click',e=>{const gh=e.target.closest('.ghead');if(gh){con
   if(now>z){box.hidden=true;return;}
   btn.onclick=e=>{e.stopPropagation();const o=pop.hidden;pop.hidden=!o;btn.setAttribute('aria-expanded',String(o));};
   document.addEventListener('click',e=>{if(!box.contains(e.target)){pop.hidden=true;btn.setAttribute('aria-expanded','false');}});
-  if(now>=a){el.innerHTML='<b>¡Ya empezaron!</b> Pregunta por ellas en tu sucursal.';return;}
+  if(now>=a){$('combosW').hidden=false;btn.lastChild.textContent='Combos Buen Fin: termina hoy';btn.onclick=e=>{e.preventDefault();$('combos').scrollIntoView({behavior:'smooth',block:'start'});};return;}
   const d=Math.ceil((a-now)/864e5); el.innerHTML=d>1?`Se revelan en <b>${d} días</b>.`:'<b>Se revelan mañana.</b>';})();
 (()=>{const hero=document.querySelector('header.hero'),m=document.createElement('div');m.className='mosaic';m.setAttribute('aria-hidden','true');
   ['Deck y madera tropical','Melamina','Triplay','Lambrín','Techos e impermeabilización','Puertas','Parota','Barrote, polín y viga','Tablas y machimbre de pino','Maderas finas'].forEach(k=>{if(IMG[k]){const i=new Image();i.src=IMG[k];i.alt='';m.appendChild(i);}});
