@@ -134,7 +134,7 @@ ul.sub .stamp{font-size:19px}
 .pop b{color:var(--tag)}
 .pop p{margin:0 0 6px}.pop p:last-child{margin:0;opacity:.85;font-size:13px}
 .combos{margin:18px 0 6px;background:var(--surface);border:2px solid var(--red);border-radius:16px;padding:16px 16px 14px;position:relative}
-.combos .ct{display:inline-block;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--red);color:#fff;border-radius:999px;padding:4px 11px 3px;margin:0 0 6px}
+.combos .ct,.fer .ct{display:inline-block;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--red);color:#fff;border-radius:999px;padding:4px 11px 3px;margin:0 0 6px}
 .combos h2{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.05;margin:0 0 4px;text-transform:uppercase}
 .combos .cl{margin:0 0 12px;color:var(--muted);font-size:15px}
 .cgrid{display:grid;gap:12px;grid-template-columns:1fr}
@@ -176,6 +176,16 @@ ul.sub .stamp{font-size:19px}
 .pn .nwb{display:inline-block!important;width:auto!important;flex:none!important;margin:0 0 0 6px!important}
 li.flash{animation:flash 2.2s ease-out}
 @keyframes flash{0%,40%{background:color-mix(in srgb,var(--tag) 45%,transparent)}100%{background:transparent}}
+.fer{margin:18px 0 6px;background:var(--surface);border:2px solid var(--red);border-radius:16px;padding:12px 16px 12px}
+.fer h2{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.05;text-transform:uppercase;margin:0 0 10px}
+.fer h2 span{display:block;font-size:17px;color:var(--accent);margin-top:2px}
+.frows{display:grid;gap:8px;grid-template-columns:1fr}
+@media (min-width:720px){.frows{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.frow{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.frow>b{font-family:var(--display);font-weight:800;font-size:30px;color:var(--red);white-space:nowrap;min-width:72px}
+.brands{display:flex;flex-wrap:wrap;gap:6px}
+.brands span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-weight:700;font-size:14px}
+.fer .fn{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.bub>button,.bub>button .dot{animation:none}}
 .famimg{flex:none;width:44px;height:44px;border-radius:8px;overflow:hidden;background:var(--chip);align-self:flex-start;margin-top:2px}
 @media (max-width:520px){.famhead{flex-wrap:wrap;row-gap:6px}.famhead .famt{flex:1 1 calc(100% - 60px)}.famhead .upto{flex:1 1 100%;text-align:left;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.famhead .upto strong{font-size:32px}.famhead .range{margin:0}}
@@ -246,6 +256,16 @@ html{scroll-behavior:smooth}
   <p>Cada sucursal tiene ofertas diferentes. Elige la tuya y te mostramos solo lo que aplica ahí.</p>
   <div class="seg" id="seg" role="radiogroup" aria-label="Sucursal"></div>
   <p id="sucnote" aria-live="polite"></p>
+</section></div>
+<div class="wrap" id="ferW" hidden><section class="fer" id="fer" aria-labelledby="ferT">
+  <p class="ct">Hasta el viernes 20 de noviembre</p>
+  <h2 id="ferT">¡Una semana más de Buen Fin! <span>Ofertas en ferretería</span></h2>
+  <div class="frows">
+    <div class="frow"><b>30 %</b><div class="brands"><span>Rugo</span><span>Eastman</span><span>Leviton</span><span>Siemens</span></div></div>
+    <div class="frow"><b>20 %</b><div class="brands"><span>Stanley</span><span>Truper</span><span>Coflex</span><span>Makita</span></div></div>
+    <div class="frow"><b>15 %</b><div class="brands"><span>Sky Fort</span></div></div>
+  </div>
+  <p class="fn">En productos seleccionados de estas marcas. Consulta productos participantes y disponibilidad en tu sucursal. Hasta agotar existencias.</p>
 </section></div>
 <div class="wrap" id="combosW" hidden><section class="combos" id="combos" aria-labelledby="combosT">
   <button type="button" class="chead" id="cBtn" aria-expanded="false" aria-controls="cBody">
@@ -350,7 +370,8 @@ list.addEventListener('click',e=>{const gh=e.target.closest('.ghead');if(gh){con
     const d=Math.floor(s/86400);s%=86400;$('cdD').textContent=d;$('cdH').textContent=p(Math.floor(s/3600));$('cdM').textContent=p(Math.floor(s%3600/60));$('cdS').textContent=p(s%60);};
   const t=setInterval(tick,1000);tick();})();
 (()=>{const el=$('tzCd'),box=$('teaser'),btn=$('tzBtn'),pop=$('tzPop'),a=new Date('2026-11-13T00:00:00-08:00').getTime(),z=new Date('2026-11-17T23:59:59-08:00').getTime(),now=Date.now();
-  if(now>z){box.hidden=true;return;}
+  const fz=new Date('2026-11-20T23:59:59-08:00').getTime(); if(now<=fz)$('ferW').hidden=false;
+  if(now>z){if(now>fz){box.hidden=true;return;} btn.lastChild.textContent='Ferretería: hasta el viernes 20';btn.onclick=e=>{e.preventDefault();$('fer').scrollIntoView({behavior:'smooth',block:'start'});};return;}
   btn.onclick=e=>{e.stopPropagation();const o=pop.hidden;pop.hidden=!o;btn.setAttribute('aria-expanded',String(o));};
   document.addEventListener('click',e=>{if(!box.contains(e.target)){pop.hidden=true;btn.setAttribute('aria-expanded','false');}});
   if(now>=a){$('combosW').hidden=false;btn.lastChild.textContent='Combos Buen Fin: termina hoy';btn.onclick=e=>{e.preventDefault();openCombos(true);$('combos').scrollIntoView({behavior:'smooth',block:'start'});};return;}
