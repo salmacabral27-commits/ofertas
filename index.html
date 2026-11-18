@@ -287,7 +287,7 @@ html{scroll-behavior:smooth}
 </section></div>
 <div class="dcol" id="combosW" hidden><section class="combos" id="combos" aria-labelledby="combosT">
   <button type="button" class="chead" id="cBtn" aria-expanded="false" aria-controls="cBody">
-    <span class="ct">Solo hasta hoy, 17 de noviembre</span>
+    <span class="ct">Hasta el sábado 21 de noviembre</span>
     <span class="chh" id="combosT">Combos del Buen Fin</span>
     <span class="cl">5 paquetes para tu proyecto · ahorra hasta $549.69</span>
     <span class="cmore"><span id="cTxt">Ver los combos</span> <i aria-hidden="true">▾</i></span>
@@ -295,7 +295,7 @@ html{scroll-behavior:smooth}
 </section></div>
 <div id="cBody" hidden>
   <div class="cgrid"><article class="ccard"><h3>Renueva tu entrada</h3><p class="cp"><span class="lbl">Ahorra</span><b>$302.85</b></p><p class="cinc"><b>Incluye:</b> Puerta tambor de 34", marco, 3 chambranas, tope, 2 bisagras de acero inoxidable, cerradura de manija con llave y guardapolvo.</p><p class="ccode">Código del combo: KIT0000001</p></article><article class="ccard"><h3>Ilumina con colores claros</h3><p class="cp"><span class="lbl">Ahorra</span><b>$194.60</b></p><p class="cinc"><b>Incluye:</b> Cubeta de pintura acrílica en colores claros, cubeta de primer Smart Coat, kit de charola, rodillo y brocha, rejilla escurridor, plástico protector de 15 m y cinta masking.</p><p class="ccode">Código del combo: KIT0000002</p></article><article class="ccard"><h3>Pinta modernidad y calidez</h3><p class="cp"><span class="lbl">Ahorra</span><b>$170.30</b></p><p class="cinc"><b>Incluye:</b> Cubeta de pintura acrílica en tonos café o gris, cubeta de primer Smart Coat, kit de charola, rodillo y brocha, rejilla escurridor, plástico protector de 15 m y cinta masking.</p><p class="ccode">Código del combo: KIT0000003</p></article><article class="ccard"><h3>Elimina goteras</h3><p class="cp"><span class="lbl">Ahorra</span><b>$283.51</b><span class=off>+ regalo</span></p><p class="cinc"><b>Incluye:</b> Cubeta de impermeabilizante Termofiber blanco de 19 L, membrana de refuerzo de 66 m², cepillo de ixtle, brocha de 3", rodillo de felpa de 9" y maneral.</p><p class="cgift"><b>🎁 De regalo:</b> Sellador acrílico Kanuh 3.8 L, con valor de $625</p><p class="ccode">Código del combo: KIT0000004</p></article><article class="ccard"><h3>Restaura tu techo</h3><p class="cp"><span class="lbl">Ahorra</span><b>$549.69</b><span class=off>+ regalo</span></p><p class="cinc"><b>Incluye:</b> 5 paquetes de shingle doble, cubeta de brea fría Johns Manville, rollo de felpa sintética Easy Lay y 1 kg de tachuela para techo.</p><p class="cgift"><b>🎁 De regalo:</b> Paquete de caballete GAF</p><p class="ccode">Código del combo: KIT0000005</p></article></div>
-  <p class="cn">Válido del 13 al 17 de noviembre de 2026 o hasta agotar existencias. Disponibilidad y precio varían por sucursal; pregunta en tu tienda por el combo. El material adicional se cobra por separado. Combos no acumulables con otras promociones.</p>
+  <p class="cn">Válido del 13 al 21 de noviembre de 2026 o hasta agotar existencias. Disponibilidad y precio varían por sucursal; pregunta en tu tienda por el combo. El material adicional se cobra por separado. Combos no acumulables con otras promociones.</p>
   </div>
 </div></div>
 <div class="wrap"><section class="nuevos" aria-labelledby="nvT">
@@ -388,12 +388,12 @@ list.addEventListener('click',e=>{const gh=e.target.closest('.ghead');if(gh){con
     if(!s){$('cd').classList.add('end');document.querySelector('.cd-t').textContent='Promociones terminadas';return clearInterval(t);}
     const d=Math.floor(s/86400);s%=86400;$('cdD').textContent=d;$('cdH').textContent=p(Math.floor(s/3600));$('cdM').textContent=p(Math.floor(s%3600/60));$('cdS').textContent=p(s%60);};
   const t=setInterval(tick,1000);tick();})();
-(()=>{const el=$('tzCd'),box=$('teaser'),btn=$('tzBtn'),pop=$('tzPop'),a=new Date('2026-11-13T00:00:00-08:00').getTime(),z=new Date('2026-11-17T23:59:59-08:00').getTime(),now=Date.now();
+(()=>{const el=$('tzCd'),box=$('teaser'),btn=$('tzBtn'),pop=$('tzPop'),a=new Date('2026-11-13T00:00:00-08:00').getTime(),z=new Date('2026-11-21T23:59:59-08:00').getTime(),now=Date.now();
   const fz=new Date('2026-11-20T23:59:59-08:00').getTime(); if(now<=fz)$('ferW').hidden=false;
   if(now>z){if(now>fz){box.hidden=true;return;} btn.lastChild.textContent='Ferretería: hasta el viernes 20';btn.onclick=e=>{e.preventDefault();$('fer').scrollIntoView({behavior:'smooth',block:'start'});};return;}
   btn.onclick=e=>{e.stopPropagation();const o=pop.hidden;pop.hidden=!o;btn.setAttribute('aria-expanded',String(o));};
   document.addEventListener('click',e=>{if(!box.contains(e.target)){pop.hidden=true;btn.setAttribute('aria-expanded','false');}});
-  if(now>=a){$('combosW').hidden=false;btn.lastChild.textContent='Combos Buen Fin: termina hoy';btn.onclick=e=>{e.preventDefault();openCombos(true);$('combos').scrollIntoView({behavior:'smooth',block:'start'});};return;}
+  if(now>=a){$('combosW').hidden=false;btn.lastChild.textContent='Combos Buen Fin: hasta el sábado 21';btn.onclick=e=>{e.preventDefault();openCombos(true);$('combos').scrollIntoView({behavior:'smooth',block:'start'});};return;}
   const d=Math.ceil((a-now)/864e5); el.innerHTML=d>1?`Se revelan en <b>${d} días</b>.`:'<b>Se revelan mañana.</b>';})();
 (()=>{const hero=document.querySelector('header.hero'),m=document.createElement('div');m.className='mosaic';m.setAttribute('aria-hidden','true');
   ['Deck y madera tropical','Melamina','Triplay','Lambrín','Techos e impermeabilización','Puertas','Parota','Barrote, polín y viga','Tablas y machimbre de pino','Maderas finas'].forEach(k=>{if(IMG[k]){const i=new Image();i.src=IMG[k];i.alt='';m.appendChild(i);}});
